@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>첫번째방</title>
+    <link rel="stylesheet" href="EscapeRoom.css">
+    <style>
+      table {
+        width: 200px;
+      }
+      td {
+        padding: 10px;
+        border: 1px solid #666666;
+      }
+      .blue {
+        background-color: blue;
+      }
+      .red {
+        background-color: red;
+      }
+      .green {
+        background-color: green;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+      .white {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>외계행성 땅따먹기</h1>
+    <p>
+      문이 열렸다. 앞으로 이렇게 문을 열면 되는건가보다. <br>
+      문을 열었다는 기쁨도 잠시, 이윽고 같은 방이 나왔다는 사실은 나의 들뜬 마음을 금새 가라앉혔다. <br>
+      이전방과 다른부분은 문에 적혀있는 글귀뿐..
+    </p>
+
+    <p>
+      ========================================================================= <br>
+      5024년. 지구는 황폐해지고 인류는 새로운 행성을 찾아떠났습니다. <br>
+      새로운 행성으로 도착한 인류는 어리석게도 각자의 국가이익을 위해 또다시 땅따먹기 전쟁을 벌이고 말았습니다. <br>
+      이 외계행성의 대륙은 정사각형의 모양으로 되어 있으며 <br>
+      인류는 각자의 나라를 아래의 그림과 같이 세웠습니다. <br>
+      흰색영토는... 어느나라인지 기억이 안나네요. <br>
+    </p>
+    <table>
+			<tr>
+				<td class="white"></td>
+				<td class="blue"></td>
+        <td class="red"></td>
+			</tr>
+		</table>
+    <table>
+			<tr>
+				<td class="red"></td>
+				<td class="white"></td>
+        <td class="green"></td>
+			</tr>
+		</table>
+    <table>
+			<tr>
+				<td class="yellow"></td>
+				<td class="blue"></td>
+        <td class="green"></td>
+			</tr>
+		</table>
+    <p>
+      <script>
+        function drawCanvas(Name, color, width, height, nation){
+          var canvas = document.getElementById(Name);
+          var ctx = canvas.getContext("2d");
+          ctx.fillStyle = color;
+          ctx.fillRect(0,0,width,height);
+          document.write(" = " + nation + '<br>');
+        }
+      </script>
+
+      <canvas id="myCanvas1" width="40" height="20" style="border:1px solid #c3c3c3;"></canvas>
+      <script>
+          drawCanvas("myCanvas1","blue",40,20,"한국");
+      </script>
+      <canvas id="myCanvas2" width="40" height="20" style="border:1px solid #c3c3c3;"></canvas>
+      <script>
+          drawCanvas("myCanvas2","red",40,20,"독일");
+      </script>
+      <canvas id="myCanvas3" width="40" height="20" style="border:1px solid #c3c3c3;"></canvas>
+      <script>
+          drawCanvas("myCanvas3","yellow",40,20,"미국");
+      </script>
+      <canvas id="myCanvas4" width="40" height="20" style="border:1px solid #c3c3c3;"></canvas>
+      <script>
+          drawCanvas("myCanvas4","green",40,20,"필리핀");
+      </script>
+
+      ========================================================================= <br><br>
+      음.. 흰색영토는 어느나라가 차지했는지 입력하라는건가?
+    </p>
+  </body>
+</html>
