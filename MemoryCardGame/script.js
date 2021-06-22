@@ -1,13 +1,17 @@
 const cards = document.querySelectorAll('.memory-card');
+const countElement = document.getElementById('count');
 
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
+let count = countElement.innerText;
 
 function flipCard(){
     if (lockBoard) return;
     if (this === firstCard) return;
 
+    count++;
+    countElement.innerText = count;
     this.classList.add('flip');
 
     if (!hasFlippedCard) {
