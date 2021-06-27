@@ -1,10 +1,16 @@
 const cards = document.querySelectorAll('.memory-card');
 const countElement = document.getElementById('count');
+const popUpElement = document.getElementById('popUp');
 
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
 let count = countElement.innerText;
+let pairCnt = 0;
+
+function popUp(){
+    popUpElement.style.display = "table-cell";
+}
 
 function flipCard(){
     if (lockBoard) return;
@@ -36,11 +42,15 @@ function checkForMatch() {
 function disableCards() {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
+    pairCnt++;
+    if (pairCnt === 6) {
+        popUp();
+    }
 }
 
 function unflipCards() {
     lockBoard = true;
-
+    
     setTimeout(() => {
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
